@@ -1,0 +1,78 @@
+#trang p {
+    color: rgba(32,32,32,0.5);
+    font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 20%;
+  }
+#trang p span {
+    display: inline-block;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-perspective: 500;
+            perspective: 500;
+    -webkit-font-smoothing: antialiased;
+}
+#trang p span::before,
+#trang p span::after {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+    content: attr(data-text);
+}
+#trang p span::before {
+    z-index: 1;
+    color: rgba(0,0,0,0.2);
+    -webkit-transform: scale(1.1, 1) skew(0deg, 10deg);
+            transform: scale(1.1, 1) skew(0deg, 10deg);
+}
+#trang p span::after {
+    z-index: 2;
+    color:rgb(255, 215, 0);
+    text-shadow: -1px 0 1px #323232, 1px 0 1px rgba(0,0,0,0.8);
+    -webkit-transform: rotateY(-35deg);
+            transform: rotateY(-35deg);
+}
+#trang p span:hover::before {
+    -webkit-transform: scale(1.1, 1) skew(0deg, 5deg);
+            transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+#trang p span:hover::after {
+    -webkit-transform: rotateY(-10deg);
+            transform: rotateY(-10deg);
+}
+#trang p span + span {
+    margin-left: 0.3em;
+}
+@media (min-width: 20em) {
+#trang p {
+      font-size: 2em;
+}
+#trang p span::before,
+#trang p span::after {
+      display: block;
+}
+}
+@media (min-width: 30em) {
+#trang p {
+      font-size: 3em;
+}
+}
+@media (min-width: 40em) {
+    #trang p {
+      font-size: 5em;
+    }
+}
+@media (min-width: 60em) {
+    #trang p {
+      font-size: 8vw;
+    }
+}
+  
